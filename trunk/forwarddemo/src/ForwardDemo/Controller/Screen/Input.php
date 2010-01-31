@@ -20,7 +20,7 @@ declare(encoding = "utf-8");
  * PHP version 5
  *
  * @category   Application
- * @package    ForwardFW
+ * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
  * @copyright  2010 The Authors
@@ -39,7 +39,7 @@ require_once 'ForwardFW/Controller/Screen.php';
  * This class is a Demo Screen class.
  *
  * @category   Application
- * @package    ForwardFW
+ * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
@@ -47,5 +47,17 @@ require_once 'ForwardFW/Controller/Screen.php';
  */
 class ForwardDemo_Controller_Screen_Input extends ForwardFW_Controller_Screen
 {
+    /**
+     * Constructor
+     *
+     * @param ForwardFW_Controller_Application $_application The running application.
+     *
+     * @return void
+     */
+    public function __construct(ForwardFW_Controller_Application $_application)
+    {
+        parent::__construct($_application);
+        $this->strView = 'ForwardDemo_Controller_View_Input';
+    }
 }
 ?>
