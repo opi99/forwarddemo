@@ -59,5 +59,32 @@ class ForwardDemo_Controller_Screen_Input extends ForwardFW_Controller_Screen
         parent::__construct($_application);
         $this->strView = 'ForwardDemo_Controller_View_Input';
     }
+
+    /**
+     * Control the user input, if available.
+     *
+     * @return boolean True if all user input was accepted.
+     */
+    public function controlInput()
+    {
+        $this->strInput = $this->getParameter('text');
+        return true;
+    }
+
+    /**
+     * Loads Data for views and defines which views to use.
+     * strView is used.
+     *
+     * @return boolean True if screen wants to be viewed. Necessary for MultiApps.
+     */
+    public function controlView()
+    {
+        $strFile = str_replace('_', '/', $this->strView) . '.php';
+        include_once $strFile;
+        $view = new $this->strView($this->application);
+        $view->setInput($this->strInput);
+        $this->addView($view);
+        return true;
+    }
 }
 ?>
