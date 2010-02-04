@@ -1,0 +1,15 @@
+This is the first version of the demo applications for ForwardFW.
+The demos will help you to understand the system and shows you the usage of the
+framework.
+
+Requirements:
+
+- ForwrdFW 0.0.4
+
+- PHP 5.2.6 or newer
+
+- You'll need the FirePHPCore extension, which you can find on http://www.firephp.org.
+
+- You can use Smarty Template Engine (Version 2 or 3), which you can find on
+http://www.smarty.net or the Twig Template Engine (0.9.5 or newer), which you can
+find on http://www.twig-project.org.
