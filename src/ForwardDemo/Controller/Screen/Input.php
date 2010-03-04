@@ -34,6 +34,7 @@ declare(encoding = "utf-8");
  *
  */
 require_once 'ForwardFW/Controller/Screen.php';
+require_once 'ForwardFW/Interface/Application.php';
 
 /**
  * This class is a Demo Screen class.
@@ -50,11 +51,11 @@ class ForwardDemo_Controller_Screen_Input extends ForwardFW_Controller_Screen
     /**
      * Constructor
      *
-     * @param ForwardFW_Controller_Application $_application The running application.
+     * @param ForwardFW_Interface_Application $_application The running application.
      *
      * @return void
      */
-    public function __construct(ForwardFW_Controller_Application $_application)
+    public function __construct(ForwardFW_Interface_Application $_application)
     {
         parent::__construct($_application);
         $this->strView = 'ForwardDemo_Controller_View_Input';
