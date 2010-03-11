@@ -74,13 +74,8 @@ class ForwardDemo_Controller_View_Input extends ForwardFW_Controller_View
     public function processView()
     {
         $templater = ForwardFW_Templater::factory($this->application);
-        try {
-            $templater->setTemplateFile($this->getTemplateName() . '.tpl');
-            $templater->setVar('strInput', $this->strInput);
-            echo $templater->getCompiled();
-        } catch (Exception $e) {
-            $this->application->response->addError($e->getMessage());
-        }
+        $templater->setVar('strInput', $this->strInput);
+        return parent::processView();
     }
 }
 ?>
