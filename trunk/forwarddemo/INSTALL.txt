@@ -1,6 +1,6 @@
 Copy the data to your web path.
 
-You will need ForwardFW 0.0.4 in your web path like following:
+You will need ForwardFW 0.0.5 in your web path like following:
 
 your htdocs
   |- forwarddemo
