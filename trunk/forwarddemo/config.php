@@ -30,7 +30,7 @@ $GLOBALS['ForwardFW_Templater_Smarty']       = array(
 
 $GLOBALS['ForwardFW_Templater_Twig']         = array(
     'CompilePath'  => getcwd() . '/cache/',
-    'TemplatePath' => getcwd() . '/data/templates/twigA',
+    'TemplatePath' => getcwd() . '/data/templates/twig',
 );
 
 $GLOBALS['SimpleFormDemo']['screens']        = array(
