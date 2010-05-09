@@ -1,4 +1,4 @@
 <body>
 Simple Form Demo version 0.0.5
-{$VIEW}
+{$VIEW_FORWARDDEMO_CONTROLLER_VIEW_INPUT}
 </body>
