@@ -1,3 +1,6 @@
+2010-05-09 Alexander Opitz <opi@gmx.at>
+* Implement Twig Templates #31
+
 2010-03-11 Alexander Opitz <opi@gmx.at>
 * Update SimpleFormDemo #24
 * Releasing 0.0.5 #23
