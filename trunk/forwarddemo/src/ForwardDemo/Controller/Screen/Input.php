@@ -80,9 +80,7 @@ class ForwardDemo_Controller_Screen_Input extends ForwardFW_Controller_Screen
      */
     public function controlView()
     {
-        $strFile = str_replace('_', '/', $this->strView) . '.php';
-        include_once $strFile;
-        $view = new $this->strView($this->application);
+        $view = $this->loadView($this->strView);
         $view->setInput($this->strInput);
         $this->addView($view);
         return true;
