@@ -1,6 +1,7 @@
 2010-05-14 Alexander Opitz <opi@gmx.at>
 * Made usage of Multi Screens #30
 * Use loadView Function #35
+* Releasing 0.0.6 #28
 
 2010-05-09 Alexander Opitz <opi@gmx.at>
 * Implement Twig Templates #31
