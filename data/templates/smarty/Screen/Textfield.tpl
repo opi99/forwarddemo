@@ -1,5 +1,5 @@
 <body>
-Simple Form Demo version 0.0.5<br />
+Simple Form Demo version 0.0.6<br />
 
 Field: <a href="?SimpleFormDemo[screen]=Input">- Input -</a> - Textarea-<br />
 
