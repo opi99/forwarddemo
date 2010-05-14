@@ -1,10 +1,10 @@
-This is the second version of the demo applications for ForwardFW.
+This is the third version of the demo applications for ForwardFW.
 The demos will help you to understand the system and shows you the usage of the
-framework.
+framework. The demo uses now the Multi Screen functionality.
 
 Requirements:
 
-- ForwrdFW 0.0.5
+- ForwardFW 0.0.6
 
 - PHP 5.2.6 or newer
 
