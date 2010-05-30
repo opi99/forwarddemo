@@ -1,3 +1,6 @@
+2010-05-20 Alexander Opitz <opi@gmx.at>
+* add multi screens for twig #34
+
 2010-05-14 Alexander Opitz <opi@gmx.at>
 * Made usage of Multi Screens #30
 * Use loadView Function #35
