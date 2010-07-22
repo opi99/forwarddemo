@@ -34,7 +34,7 @@ declare(encoding = "utf-8");
  *
  */
 require_once 'ForwardFW/Controller/View.php';
-require_once 'ForwardFW/Controller/DataLoader.php';
+require_once 'ForwardFW/Controller/DataHandler.php';
 
 /**
  * This class is a Demo Screen class to read from Database.
@@ -75,8 +75,8 @@ class ForwardDemo_Controller_View_DBRead extends ForwardFW_Controller_View
     public function processView()
     {
         $templater = ForwardFW_Templater::factory($this->application);
-        $loader = ForwardFW_Controller_DataLoader::getInstance($this->application);
-        $arData = $loader->loadFrom(
+        $handler = ForwardFW_Controller_DataHandler::getInstance($this->application);
+        $arData = $handler->loadFrom(
             'default',
             array(
                 'select' => '*',
