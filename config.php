@@ -36,5 +36,6 @@ $GLOBALS['ForwardFW_Templater_Twig']         = array(
 $GLOBALS['SimpleFormDemo']['screens']        = array(
     'Input'     => 'ForwardDemo_Controller_Screen_Input',
     'Textfield' => 'ForwardDemo_Controller_Screen_Textfield',
+    'Database'  => 'ForwardDemo_Controller_Screen_Database',
 );
 ?>
