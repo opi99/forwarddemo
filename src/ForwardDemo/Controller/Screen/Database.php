@@ -58,7 +58,6 @@ class ForwardDemo_Controller_Screen_Database extends ForwardFW_Controller_Screen
     public function __construct(ForwardFW_Interface_Application $_application)
     {
         parent::__construct($_application);
-        $this->strView = 'ForwardDemo_Controller_View_DBRead';
     }
 
     /**
@@ -79,9 +78,15 @@ class ForwardDemo_Controller_Screen_Database extends ForwardFW_Controller_Screen
      */
     public function controlView()
     {
-        $view = $this->loadView($this->strView);
+        // Menu View
+        $view = $this->loadView('ForwardDemo_Controller_View_Menu');
+        $this->addView($view);
+
+        // DBRead View
+        $view = $this->loadView('ForwardDemo_Controller_View_DBRead');
         $view->setInput($this->strInput);
         $this->addView($view);
+
         return true;
     }
 }

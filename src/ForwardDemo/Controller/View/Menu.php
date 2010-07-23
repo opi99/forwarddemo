@@ -21,74 +21,44 @@ declare(encoding = "utf-8");
  *
  * @category   Application
  * @package    ForwardDemo
- * @subpackage Controller
+ * @subpackage Controller/View
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
  * @copyright  2010 The Authors
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @version    SVN: $Id: $
  * @link       http://forwardfw.sourceforge.net
- * @since      File available since Release 0.0.6
+ * @since      File available since Release 0.0.7
  */
 
 /**
  *
  */
-require_once 'ForwardFW/Controller/Screen.php';
-require_once 'ForwardFW/Interface/Application.php';
+require_once 'ForwardFW/Controller/View.php';
 
 /**
  * This class is a Demo Screen class.
  *
  * @category   Application
  * @package    ForwardDemo
- * @subpackage Controller
+ * @subpackage Controller/View
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link       http://forwardfw.sourceforge.net
  */
-class ForwardDemo_Controller_Screen_Textfield extends ForwardFW_Controller_Screen
+class ForwardDemo_Controller_View_Menu extends ForwardFW_Controller_View
 {
     /**
-     * Constructor
-     *
-     * @param ForwardFW_Interface_Application $_application The running application.
+     * Processes the View.
      *
      * @return void
      */
-    public function __construct(ForwardFW_Interface_Application $_application)
+    public function processView()
     {
-        parent::__construct($_application);
-    }
+        $templater = ForwardFW_Templater::factory($this->application);
+        $templater->setVar('arMenu', $this->application->getScreens());
+        $templater->setVar('strProcessScreen', $this->application->getProcessScreen());
 
-    /**
-     * Control the user input, if available.
-     *
-     * @return boolean True if all user input was accepted.
-     */
-    public function controlInput()
-    {
-        $this->strInput = $this->getParameter('text');
-        return true;
-    }
-
-    /**
-     * Loads Data for views and defines which views to use.
-     * strView is used.
-     *
-     * @return boolean True if screen wants to be viewed. Necessary for MultiApps.
-     */
-    public function controlView()
-    {
-        // Menu View
-        $view = $this->loadView('ForwardDemo_Controller_View_Menu');
-        $this->addView($view);
-
-        // Textfield View
-        $view = $this->loadView('ForwardDemo_Controller_View_Textfield');
-        $view->setInput($this->strInput);
-        $this->addView($view);
-
-        return true;
+        return parent::processView();
     }
 }
 ?>
