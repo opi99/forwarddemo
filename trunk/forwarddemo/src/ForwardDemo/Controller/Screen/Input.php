@@ -58,7 +58,6 @@ class ForwardDemo_Controller_Screen_Input extends ForwardFW_Controller_Screen
     public function __construct(ForwardFW_Interface_Application $_application)
     {
         parent::__construct($_application);
-        $this->strView = 'ForwardDemo_Controller_View_Input';
     }
 
     /**
@@ -80,9 +79,15 @@ class ForwardDemo_Controller_Screen_Input extends ForwardFW_Controller_Screen
      */
     public function controlView()
     {
-        $view = $this->loadView($this->strView);
+        // Menu View
+        $view = $this->loadView('ForwardDemo_Controller_View_Menu');
+        $this->addView($view);
+
+        // Input View
+        $view = $this->loadView('ForwardDemo_Controller_View_Input');
         $view->setInput($this->strInput);
         $this->addView($view);
+
         return true;
     }
 }
