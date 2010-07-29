@@ -1,5 +1,5 @@
 <body>
-Simple Form Demo version 0.0.6
+Simple Form Demo version {{ForwardFW_Version}}
 
 Field: <a href="?SimpleFormDemo[screen]=Input">- Input -</a> - Textarea-<br />
 

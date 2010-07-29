@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Simple Form Demo 0.0.6</title>
+<title>Simple Form Demo {{ForwardFW_Version}}</title>
 </head>
 {{SCREEN}}
 </html>
