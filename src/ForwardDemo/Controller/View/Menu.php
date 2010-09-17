@@ -55,8 +55,9 @@ class ForwardDemo_Controller_View_Menu extends ForwardFW_Controller_View
     public function processView()
     {
         $templater = ForwardFW_Templater::factory($this->application);
-        $templater->setVar('arMenu', $this->application->getScreens());
-        $templater->setVar('strProcessScreen', $this->application->getProcessScreen());
+        $templater
+            ->setVar('arMenu', $this->application->getScreens())
+            ->setVar('strProcessScreen', $this->application->getProcessScreen());
 
         return parent::processView();
     }
