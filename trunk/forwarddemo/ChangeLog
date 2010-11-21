@@ -1,3 +1,6 @@
+2010-11-21 Alexander Opitz <opi@gmx.at>
+* #52 Implement Caching Demo
+
 2010-07-29 Alexander Opitz <opi@gmx.at>
 * Create Menu View (smarty) #36
 * DataHandler FW TestView #32

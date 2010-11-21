@@ -37,5 +37,6 @@ $GLOBALS['SimpleFormDemo']['screens']        = array(
     'Input'     => 'ForwardDemo_Controller_Screen_Input',
     'Textfield' => 'ForwardDemo_Controller_Screen_Textfield',
     'Database'  => 'ForwardDemo_Controller_Screen_Database',
+    'Cache'     => 'ForwardDemo_Controller_Screen_Cache',
 );
 ?>
