@@ -1,6 +1,10 @@
 2010-11-21 Alexander Opitz <opi@gmx.at>
 * #52 Implement Caching Demo
 
+2010-08-26 Alexander Opitz <opi@gmx.at>
+* #41 Create Menu View (twig)
+* #45 Database output (twig)
+
 2010-07-29 Alexander Opitz <opi@gmx.at>
 * Create Menu View (smarty) #36
 * DataHandler FW TestView #32
