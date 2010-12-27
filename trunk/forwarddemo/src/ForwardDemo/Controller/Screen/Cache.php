@@ -72,7 +72,10 @@ class ForwardDemo_Controller_Screen_Cache extends ForwardFW_Controller_Screen
         $configCacheSystem
             ->setCacheBackend('ForwardFW_Cache_Backend_Session')
             ->setCacheFrontend('ForwardFW_Cache_Frontend_Function');
-        $cache = ForwardFW_Cache::getInstance($this->application, $configCacheSystem);
+        $cache = ForwardFW_Cache_Frontend::getInstance(
+            $this->application,
+            $configCacheSystem
+        );
 
         $cacheCallback = new ForwardFW_Callback(array($this, 'testCache'));
 
