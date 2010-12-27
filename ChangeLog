@@ -1,3 +1,6 @@
+2010-11-27 Alexander Opitz <opi@gmx.at>
+* #50 Update to match refatoring
+
 2010-11-21 Alexander Opitz <opi@gmx.at>
 * #52 Implement Caching Demo
 * #44 Releasing 0.0.8
