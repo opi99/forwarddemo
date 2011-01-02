@@ -38,6 +38,7 @@ require_once 'ForwardFW/Interface/Application.php';
 
 require_once 'ForwardFW/Callback.php';
 require_once 'ForwardFW/Cache/Frontend/Function.php';
+require_once 'ForwardFW/Config/Cache/Backend/File.php';
 
 /**
  * This class is a Demo Screen class.
@@ -68,9 +69,13 @@ class ForwardDemo_Controller_Screen_Cache extends ForwardFW_Controller_Screen
         $view = $this->loadView('ForwardDemo_Controller_View_Menu');
         $this->addView($view);
 
+        $backendConfig = new ForwardFW_Config_Cache_Backend_File();
+        $backendConfig->strPath = getcwd() . '/cache/';
+
         $configCacheSystem = new ForwardFW_Config_CacheSystem();
         $configCacheSystem
-            ->setCacheBackend('ForwardFW_Cache_Backend_Session')
+            ->setCacheBackend('ForwardFW_Cache_Backend_File')
+            ->setBackendConfig($backendConfig)
             ->setCacheFrontend('ForwardFW_Cache_Frontend_Function');
         $cache = ForwardFW_Cache_Frontend::getInstance(
             $this->application,

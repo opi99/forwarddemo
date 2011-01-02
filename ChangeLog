@@ -1,5 +1,8 @@
-2010-11-27 Alexander Opitz <opi@gmx.at>
-* #50 Update to match refatoring
+2011-01-02 Alexander Opitz <opi@gmx.at>
+* #50 Test implemented filecache
+
+2010-12-27 Alexander Opitz <opi@gmx.at>
+* #50 Update to match refactoring
 
 2010-11-21 Alexander Opitz <opi@gmx.at>
 * #52 Implement Caching Demo
