@@ -76,7 +76,7 @@ class ForwardDemo_Controller_View_DBRead extends ForwardFW_Controller_View
     {
         $templater = ForwardFW_Templater::factory($this->application);
         $handler = ForwardFW_Controller_DataHandler::getInstance($this->application);
-        $arData = $handler->loadFrom(
+        $arData = $handler->loadFromCached(
             'default',
             array(
                 'select' => '*',
