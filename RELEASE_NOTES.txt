@@ -12,7 +12,7 @@ Requirements:
 
 - You'll need the FirePHPCore extension, which you can find on http://www.firephp.org.
 
-- MDB2 2.4.0 or newer
+- MDB2 2.5.0b5 or newer
 
 - You can use Smarty Template Engine (Version 3.1 or newer), which you can find on
 http://www.smarty.net or the Twig Template Engine (0.9.6 or newer), which you can
