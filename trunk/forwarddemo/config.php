@@ -20,7 +20,7 @@ $GLOBALS['ForwardFW\\Application']            = array(
 
 $GLOBALS['ForwardFW\\Templater']              = array(
     'Templater' => 'ForwardFW\\Templater\\Smarty',
-#    'Templater' => 'ForwardFW\\Templater\\Twig',
+//     'Templater' => 'ForwardFW\\Templater\\Twig',
 );
 
 $GLOBALS['ForwardFW\\Templater\\Smarty']       = array(
