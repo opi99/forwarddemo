@@ -1,5 +1,4 @@
 <?php
-declare(encoding = "utf-8");
 /**
  * This file is part of ForwardFW a web application framework.
  *
@@ -23,16 +22,14 @@ declare(encoding = "utf-8");
  * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @copyright  2010 The Authors
+ * @copyright  2010-2013 The Authors
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
- * @version    SVN: $Id: $
  * @link       http://forwardfw.sourceforge.net
  * @since      File available since Release 0.0.6
  */
 
-/**
- *
- */
+namespace ForwardDemo\Controller\View;
+
 require_once 'ForwardFW/Controller/View.php';
 
 /**
@@ -45,7 +42,7 @@ require_once 'ForwardFW/Controller/View.php';
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link       http://forwardfw.sourceforge.net
  */
-class ForwardDemo_Controller_View_Textfield extends ForwardFW_Controller_View
+class Textfield extends \ForwardFW\Controller\View
 {
     /**
      * The Input of the user
@@ -57,13 +54,13 @@ class ForwardDemo_Controller_View_Textfield extends ForwardFW_Controller_View
     /**
      * Setter for strInput
      *
-     * @param string $_strInput The string.
+     * @param string $strInput The string.
      *
      * @return void
      */
-    public function setInput($_strInput)
+    public function setInput($strInput)
     {
-        $this->strInput = $_strInput;
+        $this->strInput = $strInput;
     }
 
     /**
@@ -73,9 +70,8 @@ class ForwardDemo_Controller_View_Textfield extends ForwardFW_Controller_View
      */
     public function processView()
     {
-        $templater = ForwardFW_Templater::factory($this->application);
+        $templater = \ForwardFW\Templater::factory($this->application);
         $templater->setVar('strInput', $this->strInput);
         return parent::processView();
     }
 }
-?>

@@ -1,5 +1,4 @@
 <?php
-declare(encoding = "utf-8");
 /**
  * This file is part of ForwardFW a web application framework.
  *
@@ -23,21 +22,19 @@ declare(encoding = "utf-8");
  * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @copyright  2010 The Authors
+ * @copyright  2010-2013 The Authors
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
- * @version    SVN: $Id: $
  * @link       http://forwardfw.sourceforge.net
  * @since      File available since Release 0.0.8
  */
 
-/**
- *
- */
+namespace ForwardDemo\Controller\Screen;
+
+require_once 'ForwardFW/Controller/ApplicationInterface.php';
 require_once 'ForwardFW/Controller/Screen.php';
-require_once 'ForwardFW/Interface/Application.php';
 
 require_once 'ForwardFW/Callback.php';
-require_once 'ForwardFW/Cache/Frontend/Function.php';
+require_once 'ForwardFW/Cache/Frontend/Caller.php';
 require_once 'ForwardFW/Config/Cache/Backend/File.php';
 
 /**
@@ -50,7 +47,7 @@ require_once 'ForwardFW/Config/Cache/Backend/File.php';
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link       http://forwardfw.sourceforge.net
  */
-class ForwardDemo_Controller_Screen_Cache extends ForwardFW_Controller_Screen
+class Cache extends \ForwardFW\Controller\Screen
 {
     /**
      * @var string Holds cached data
@@ -66,25 +63,25 @@ class ForwardDemo_Controller_Screen_Cache extends ForwardFW_Controller_Screen
     public function controlView()
     {
         // Menu View
-        $view = $this->loadView('ForwardDemo_Controller_View_Menu');
+        $view = $this->loadView('ForwardDemo\\Controller\\View\\Menu');
         $this->addView($view);
 
-        $backendConfig = new ForwardFW_Config_Cache_Backend_File();
+        $backendConfig = new \ForwardFW\Config\Cache\Backend\File();
         $backendConfig->strPath = getcwd() . '/cache/';
 
-        $configCacheFrontend = new ForwardFW_Config_Cache_Frontend();
+        $configCacheFrontend = new \ForwardFW\Config\Cache\Frontend();
         $configCacheFrontend
-            ->setCacheBackend('ForwardFW_Cache_Backend_File')
+            ->setCacheBackend('ForwardFW\\Cache\\Backend\\File')
             ->setBackendConfig($backendConfig)
-            ->setCacheFrontend('ForwardFW_Cache_Frontend_Function');
-        $cache = ForwardFW_Cache_Frontend::getInstance(
+            ->setCacheFrontend('ForwardFW\\Cache\\Frontend\\Caller');
+        $cache = \ForwardFW\Cache\Frontend::getInstance(
             $this->application,
             $configCacheFrontend
         );
 
-        $cacheCallback = new ForwardFW_Callback(array($this, 'testCache'));
+        $cacheCallback = new \ForwardFW\Callback(array($this, 'testCache'));
 
-        $configCacheData = new ForwardFW_Config_Cache_Data_Function();
+        $configCacheData = new \ForwardFW\Config\Cache\Data\Caller();
         $configCacheData
             ->setCallback($cacheCallback)
             ->setTimeout(5);
@@ -100,7 +97,7 @@ class ForwardDemo_Controller_Screen_Cache extends ForwardFW_Controller_Screen
      */
     public function processView()
     {
-        $templater = ForwardFW_Templater::factory($this->application);
+        $templater = \ForwardFW\Templater::factory($this->application);
         $templater->setVar('strInput', $this->strInput);
         $templater->setVar('strCached', $this->strCached);
         return parent::processView();
@@ -116,4 +113,3 @@ class ForwardDemo_Controller_Screen_Cache extends ForwardFW_Controller_Screen
         return 'Testdata';
     }
 }
-?>
