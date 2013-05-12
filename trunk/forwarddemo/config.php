@@ -3,7 +3,7 @@
 error_reporting(E_ALL & ~E_NOTICE);
 ini_set('display_errors', true);
 
-require_once '../forwardfw/config.php';
+require_once '../../forwardfw/config.php';
 
 ini_set('include_path', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'src' . PATH_SEPARATOR . ini_get('include_path'));
 ini_set('include_path', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'libs' . PATH_SEPARATOR . ini_get('include_path'));
@@ -24,13 +24,13 @@ $GLOBALS['ForwardFW_Templater']              = array(
 );
 
 $GLOBALS['ForwardFW_Templater_Smarty']       = array(
-    'CompilePath'  => getcwd() . '/cache/',
-    'TemplatePath' => getcwd() . '/data/templates/smarty',
+    'CompilePath'  => getcwd() . '/../cache/',
+    'TemplatePath' => getcwd() . '/../data/templates/smarty',
 );
 
 $GLOBALS['ForwardFW_Templater_Twig']         = array(
-    'CompilePath'  => getcwd() . '/cache/',
-    'TemplatePath' => getcwd() . '/data/templates/twig',
+    'CompilePath'  => getcwd() . '/../cache/',
+    'TemplatePath' => getcwd() . '/../data/templates/twig',
 );
 
 $GLOBALS['SimpleFormDemo']['screens']        = array(
@@ -39,4 +39,3 @@ $GLOBALS['SimpleFormDemo']['screens']        = array(
     'Database'  => 'ForwardDemo_Controller_Screen_Database',
     'Cache'     => 'ForwardDemo_Controller_Screen_Cache',
 );
-?>
