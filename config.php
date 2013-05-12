@@ -5,8 +5,8 @@ ini_set('display_errors', true);
 
 require_once '../../forwardfw/config.php';
 
-ini_set('include_path', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'src' . PATH_SEPARATOR . ini_get('include_path'));
-ini_set('include_path', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'libs' . PATH_SEPARATOR . ini_get('include_path'));
+set_include_path(dirname(__FILE__) . '/src' . PATH_SEPARATOR . get_include_path());
+set_include_path(dirname(__FILE__) . '/libs' . PATH_SEPARATOR . get_include_path());
 
 $GLOBALS['ForwardFW\\Filter\\RequestResponse'] = array(
     'ForwardFW\\Filter\\RequestResponse\\FirePHP',
