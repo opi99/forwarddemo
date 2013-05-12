@@ -1,5 +1,4 @@
 <?php
-declare(encoding = "utf-8");
 /**
  * This file is part of ForwardFW a web application framework.
  *
@@ -23,18 +22,16 @@ declare(encoding = "utf-8");
  * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @copyright  2010 The Authors
+ * @copyright  2010-2013 The Authors
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
- * @version    SVN: $Id: $
  * @link       http://forwardfw.sourceforge.net
  * @since      File available since Release 0.0.6
  */
 
-/**
- *
- */
+namespace ForwardDemo\Controller\Screen;
+
 require_once 'ForwardFW/Controller/Screen.php';
-require_once 'ForwardFW/Interface/Application.php';
+require_once 'ForwardFW/Controller/ApplicationInterface.php';
 
 /**
  * This class is a Demo Screen class.
@@ -46,18 +43,18 @@ require_once 'ForwardFW/Interface/Application.php';
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link       http://forwardfw.sourceforge.net
  */
-class ForwardDemo_Controller_Screen_Textfield extends ForwardFW_Controller_Screen
+class Textfield extends \ForwardFW\Controller\Screen
 {
     /**
      * Constructor
      *
-     * @param ForwardFW_Interface_Application $_application The running application.
+     * @param ForwardFW\Controller\ApplicationInterface $application The running application.
      *
      * @return void
      */
-    public function __construct(ForwardFW_Interface_Application $_application)
+    public function __construct(\ForwardFW\Controller\ApplicationInterface $application)
     {
-        parent::__construct($_application);
+        parent::__construct($application);
     }
 
     /**
@@ -80,15 +77,14 @@ class ForwardDemo_Controller_Screen_Textfield extends ForwardFW_Controller_Scree
     public function controlView()
     {
         // Menu View
-        $view = $this->loadView('ForwardDemo_Controller_View_Menu');
+        $view = $this->loadView('ForwardDemo\Controller\View\Menu');
         $this->addView($view);
 
         // Textfield View
-        $view = $this->loadView('ForwardDemo_Controller_View_Textfield');
+        $view = $this->loadView('ForwardDemo\Controller\View\Textfield');
         $view->setInput($this->strInput);
         $this->addView($view);
 
         return true;
     }
 }
-?>
