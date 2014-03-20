@@ -22,15 +22,13 @@
  * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @copyright  2010-2013 The Authors
+ * @copyright  2010-2014 The Authors
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link       http://forwardfw.sourceforge.net
  * @since      File available since Release 0.0.4
  */
 
 namespace ForwardDemo\Controller\View;
-
-require_once 'ForwardFW/Controller/View.php';
 
 /**
  * This class is a Demo Screen class.

@@ -22,16 +22,13 @@
  * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @copyright  2010-2013 The Authors
+ * @copyright  2010-2014 The Authors
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link       http://forwardfw.sourceforge.net
  * @since      File available since Release 0.0.7
  */
 
 namespace ForwardDemo\Controller\View;
-
-require_once 'ForwardFW/Controller/View.php';
-require_once 'ForwardFW/Controller/DataHandler.php';
 
 /**
  * This class is a Demo Screen class to read from Database.
@@ -46,32 +43,13 @@ require_once 'ForwardFW/Controller/DataHandler.php';
 class DBRead extends \ForwardFW\Controller\View
 {
     /**
-     * The Input of the user
-     *
-     * @var string
-     */
-    private $strInput = '';
-
-    /**
-     * Setter for strInput
-     *
-     * @param string $strInput The string.
-     *
-     * @return void
-     */
-    public function setInput($strInput)
-    {
-        $this->strInput = $strInput;
-    }
-
-    /**
      * Processes the View.
      *
      * @return void
      */
     public function processView()
     {
-        $templater = $this->application->getTemplater();
+        die('TODO: DataHandling isn\'t reorganiced yet.');
         $handler = \ForwardFW\Controller\DataHandler::getInstance($this->application);
         $arData = $handler->loadFromCached(
             'default',
@@ -80,6 +58,8 @@ class DBRead extends \ForwardFW\Controller\View
                 'from' => 'forwarddemo',
             )
         );
+
+        $templater = $this->application->getTemplater();
         $templater->setVar('arData', $arData);
 
         return parent::processView();

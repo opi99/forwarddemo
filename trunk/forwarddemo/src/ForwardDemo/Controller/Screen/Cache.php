@@ -22,20 +22,13 @@
  * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @copyright  2010-2013 The Authors
+ * @copyright  2010-2014 The Authors
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link       http://forwardfw.sourceforge.net
  * @since      File available since Release 0.0.8
  */
 
 namespace ForwardDemo\Controller\Screen;
-
-require_once 'ForwardFW/Controller/ApplicationInterface.php';
-require_once 'ForwardFW/Controller/Screen.php';
-
-require_once 'ForwardFW/Callback.php';
-require_once 'ForwardFW/Cache/Frontend/Caller.php';
-require_once 'ForwardFW/Config/Cache/Backend/File.php';
 
 /**
  * This class is a Demo Screen class.
