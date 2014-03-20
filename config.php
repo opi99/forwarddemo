@@ -9,33 +9,24 @@ set_include_path(dirname(__FILE__) . '/src' . PATH_SEPARATOR . get_include_path(
 set_include_path(dirname(__FILE__) . '/libs' . PATH_SEPARATOR . get_include_path());
 
 $GLOBALS['ForwardFW\\Filter\\RequestResponse'] = array(
-    'ForwardFW\\Filter\\RequestResponse\\FirePHP',
-    'ForwardFW\\Filter\\RequestResponse\\Application',
-);
-
-$GLOBALS['ForwardFW\\Application']            = array(
-    'class' => 'ForwardFW\\Controller\\Application',
-    'name'  => 'SimpleFormDemo',
-);
-
-$GLOBALS['ForwardFW\\Templater']              = array(
-    'Templater' => 'ForwardFW\\Templater\\Smarty',
-//     'Templater' => 'ForwardFW\\Templater\\Twig',
-);
-
-$GLOBALS['ForwardFW\\Templater\\Smarty']       = array(
-    'CompilePath'  => getcwd() . '/../cache/',
-    'TemplatePath' => getcwd() . '/../data/templates/smarty',
-);
-
-$GLOBALS['ForwardFW\\Templater\\Twig']         = array(
-    'CompilePath'  => getcwd() . '/../cache/',
-    'TemplatePath' => getcwd() . '/../data/templates/twig',
-);
-
-$GLOBALS['SimpleFormDemo']['screens']        = array(
-    'Input'     => 'ForwardDemo\\Controller\\Screen\\Input',
-    'Textfield' => 'ForwardDemo\\Controller\\Screen\\Textfield',
-    'Database'  => 'ForwardDemo\\Controller\\Screen\\Database',
-    'Cache'     => 'ForwardDemo\\Controller\\Screen\\Cache',
+    (new ForwardFW\Config\Filter\RequestResponse\FirePhp()),
+    (new ForwardFW\Config\Filter\RequestResponse\Application())
+        ->setConfig(
+            (new ForwardFW\Config\Application())
+                ->setName('SimpleFormDemo')
+                ->setScreens(
+                    array(
+                        'Input'     => 'ForwardDemo\\Controller\\Screen\\Input',
+                        'Textfield' => 'ForwardDemo\\Controller\\Screen\\Textfield',
+                        'Database'  => 'ForwardDemo\\Controller\\Screen\\Database',
+                        'Cache'     => 'ForwardDemo\\Controller\\Screen\\Cache',
+                    )
+                )
+                ->setIdent('SimpleFormDemo')
+                ->setTemplaterConfig(
+                    (new ForwardFW\Config\Templater\Smarty())
+                        ->setCompilePath(getcwd() . '/../cache/')
+                        ->setTemplatePath(getcwd() . '/../data/templates/smarty')
+                )
+        )
 );
