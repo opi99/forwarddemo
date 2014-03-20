@@ -70,8 +70,9 @@ class Input extends \ForwardFW\Controller\View
      */
     public function processView()
     {
-        $templater = \ForwardFW\Templater::factory($this->application);
+        $templater = $this->application->getTemplater();
         $templater->setVar('strInput', $this->strInput);
+
         return parent::processView();
     }
 }

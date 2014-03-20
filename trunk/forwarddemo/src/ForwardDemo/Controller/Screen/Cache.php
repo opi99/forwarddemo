@@ -97,9 +97,10 @@ class Cache extends \ForwardFW\Controller\Screen
      */
     public function processView()
     {
-        $templater = \ForwardFW\Templater::factory($this->application);
+        $templater = $this->application->getTemplater();
         $templater->setVar('strInput', $this->strInput);
         $templater->setVar('strCached', $this->strCached);
+
         return parent::processView();
     }
 

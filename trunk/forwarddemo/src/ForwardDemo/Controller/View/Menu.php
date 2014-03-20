@@ -51,7 +51,7 @@ class Menu extends \ForwardFW\Controller\View
      */
     public function processView()
     {
-        $templater = \ForwardFW\Templater::factory($this->application);
+        $templater = $this->application->getTemplater();
         $templater
             ->setVar('arMenu', $this->application->getScreens())
             ->setVar('strProcessScreen', $this->application->getProcessScreen());
