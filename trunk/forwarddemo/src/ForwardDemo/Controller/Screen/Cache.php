@@ -59,14 +59,12 @@ class Cache extends \ForwardFW\Controller\Screen
         $view = $this->loadView('ForwardDemo\\Controller\\View\\Menu');
         $this->addView($view);
 
-        $backendConfig = new \ForwardFW\Config\Cache\Backend\File();
-        $backendConfig->strPath = getcwd() . '/cache/';
+        $configCacheBackend = new \ForwardFW\Config\Cache\Backend\File();
+        $configCacheBackend->setPath(getcwd() . '/cache/');
 
-        $configCacheFrontend = new \ForwardFW\Config\Cache\Frontend();
-        $configCacheFrontend
-            ->setCacheBackend('ForwardFW\\Cache\\Backend\\File')
-            ->setBackendConfig($backendConfig)
-            ->setCacheFrontend('ForwardFW\\Cache\\Frontend\\Caller');
+        $configCacheFrontend = new \ForwardFW\Config\Cache\Frontend\Caller();
+        $configCacheFrontend->setBackendConfig($configCacheBackend);
+
         $cache = \ForwardFW\Cache\Frontend::getInstance(
             $this->application,
             $configCacheFrontend
@@ -78,6 +76,7 @@ class Cache extends \ForwardFW\Controller\Screen
         $configCacheData
             ->setCallback($cacheCallback)
             ->setTimeout(5);
+
         $this->strCached = $cache->getCache($configCacheData);
 
         return true;
