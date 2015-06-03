@@ -22,7 +22,7 @@
  * @package    ForwardDemo
  * @subpackage Controller
  * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @copyright  2010-2014 The Authors
+ * @copyright  2010-2015 The Authors
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link       http://forwardfw.sourceforge.net
  * @since      File available since Release 0.0.7
@@ -49,7 +49,6 @@ class DBRead extends \ForwardFW\Controller\View
      */
     public function processView()
     {
-        die('TODO: DataHandling isn\'t reorganiced yet.');
         $handler = \ForwardFW\Controller\DataHandler::getInstance($this->application);
         $arData = $handler->loadFromCached(
             'default',
