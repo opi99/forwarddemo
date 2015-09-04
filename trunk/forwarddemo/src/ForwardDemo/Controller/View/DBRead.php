@@ -49,8 +49,9 @@ class DBRead extends \ForwardFW\Controller\View
      */
     public function processView()
     {
-        $handler = \ForwardFW\Controller\DataHandler::getInstance($this->application);
-        $arData = $handler->loadFromCached(
+        $dataHandler = $this->application->getServiceManager()->getService('ForwardFW\\Controller\\DataHandlerInterface');
+
+        $data = $dataHandler->loadFromCached(
             'default',
             array(
                 'select' => '*',
@@ -59,7 +60,7 @@ class DBRead extends \ForwardFW\Controller\View
         );
 
         $templater = $this->application->getTemplater();
-        $templater->setVar('arData', $arData);
+        $templater->setVar('arData', $data);
 
         return parent::processView();
     }
