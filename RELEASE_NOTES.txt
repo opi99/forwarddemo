@@ -6,14 +6,15 @@ A demo for the caching system was added.
 
 Requirements:
 
-- ForwardFW 0.0.11
+- ForwardFW 0.2.0
 
-- PHP 5.4.0 or newer
+- PHP 7.2.0 or newer
 
-- You'll need the FirePHPCore extension, which you can find on http://www.firephp.org.
+- You can use the outdated FirePHPCore extension, which you can find on http://www.firephp.org
+- You can use the Kodus ChromeLogger extension, which you can find on https://packagist.org/packages/kodus/chrome-logger
 
 - MDB2 2.5.0b5 or newer
 
 - You can use Smarty Template Engine (Version 3.1 or newer), which you can find on
-http://www.smarty.net or the Twig Template Engine (0.9.6 or newer), which you can
-find on http://www.twig-project.org.
+http://www.smarty.net or the Twig Template Engine (1.12.0 or newer), which you can
+find on http://twig.sensiolabs.org/.

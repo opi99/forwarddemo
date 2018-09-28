@@ -6,8 +6,6 @@ date_default_timezone_set('CET');
 
 set_include_path(__DIR__ . '/../../forwardfw/src' . PATH_SEPARATOR . get_include_path());
 set_include_path(__DIR__ . '/../src' . PATH_SEPARATOR . get_include_path());
-set_include_path(__DIR__ . '/../../forwardfw/libs' . PATH_SEPARATOR . get_include_path());
-set_include_path(__DIR__ . '/../libs' . PATH_SEPARATOR . get_include_path());
 
 require_once 'ForwardFW/Bootstrap.php';
 
