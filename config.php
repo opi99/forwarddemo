@@ -6,11 +6,14 @@ return (new ForwardFW\Config\Runner())
                 ->setDsn('mysqli://john:doe@localhost/forwardfw')
                 ->setTablePrefix('')
         )
-        ->addProcessor(
-            new ForwardFW\Config\Filter\RequestResponse\ChromeLogger()
+        ->addService(
+            (new \ForwardFW\Config\Service\Logger\ChromeLogger())
         )
-        ->addProcessor(
-            (new ForwardFW\Config\Filter\RequestResponse\Application())
+        ->addMiddleware(
+            new \ForwardFW\Config\Middleware\ChromeLogger()
+        )
+        ->addMiddleware(
+            (new \ForwardFW\Config\Middleware\Application())
                 ->setConfig(
                     (new ForwardFW\Config\Application())
                         ->setName('SimpleFormDemo')

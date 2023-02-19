@@ -3,5 +3,10 @@
         "psr-4": {
             "ForwardDemo\\": "src/ForwardDemo"
         }
+    },
+    "require": {
+        "forward/forwardfw": "dev-master",
+        "kodus/chrome-logger": "^1.2",
+        "smarty/smarty": "^4.3"
     }
 }
