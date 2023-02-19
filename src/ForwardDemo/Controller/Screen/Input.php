@@ -36,7 +36,7 @@ class Input extends \ForwardFW\Controller\Screen
      *
      * @return boolean True if all user input was accepted.
      */
-    public function controlInput()
+    public function controlInput(): bool
     {
         $this->text = (string) $this->getParameter('text');
         return true;
@@ -48,7 +48,7 @@ class Input extends \ForwardFW\Controller\Screen
      *
      * @return boolean True if screen wants to be viewed. Necessary for MultiApps.
      */
-    public function controlView()
+    public function controlView(): bool
     {
         // Menu View
         $view = $this->loadView(\ForwardDemo\Controller\View\Menu::class);
