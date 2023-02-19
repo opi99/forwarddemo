@@ -1,75 +1,43 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * This file is part of ForwardFW a web application framework.
  *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General Public License for more details.
- *
- * You should have received a copy of the GNU General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- * PHP version 5
- *
- * @category   Application
- * @package    ForwardDemo
- * @subpackage Controller
- * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @copyright  2010-2015 The Authors
- * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
- * @link       http://forwardfw.sourceforge.net
- * @since      File available since Release 0.0.6
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
  */
 
 namespace ForwardDemo\Controller\View;
 
 /**
  * This class is a Demo Screen class.
- *
- * @category   Application
- * @package    ForwardDemo
- * @subpackage Controller
- * @author     Alexander Opitz <opitz.alexander@primacom.net>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License
- * @link       http://forwardfw.sourceforge.net
  */
 class Textfield extends \ForwardFW\Controller\View
 {
-    /**
-     * The Input of the user
-     *
-     * @var string
-     */
-    private $strInput = '';
+    /** @var string The Input of the user */
+    private string $input = '';
 
     /**
-     * Setter for strInput
-     *
-     * @param string $strInput The string.
-     *
-     * @return void
+     * Setter for input string
      */
-    public function setInput($strInput)
+    public function setInput(string $input): void
     {
-        $this->strInput = $strInput;
+        $this->input = $input;
     }
 
     /**
      * Processes the View.
-     *
-     * @return void
      */
-    public function processView()
+    public function processView(): string
     {
         $templater = $this->application->getTemplater();
-        $templater->setVar('strInput', $this->strInput);
+        $templater->setVar('strInput', $this->input);
 
         return parent::processView();
     }

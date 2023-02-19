@@ -33,8 +33,6 @@ class Input extends \ForwardFW\Controller\View
 
     /**
      * Processes the View.
-     *
-     * @return void
      */
     public function processView(): string
     {

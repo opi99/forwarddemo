@@ -38,7 +38,7 @@ class Input extends \ForwardFW\Controller\Screen
      */
     public function controlInput(): bool
     {
-        $this->text = (string) $this->getParameter('text');
+        $this->text = (string)$this->getParameter('text');
         return true;
     }
 
