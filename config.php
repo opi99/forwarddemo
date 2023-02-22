@@ -1,9 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 return (new ForwardFW\Config\Runner())
         ->addService(
-            (new ForwardFW\Config\Service\DataHandler\Mdb2())
-                ->setDsn('mysqli://john:doe@localhost/forwardfw')
+            (new ForwardFW\Config\Service\DataHandler\Pdo())
+                ->setDsn('mysql:host=db;port=3306;dbname=db')
+                ->setUsername('db')
+                ->setPassword('db')
                 ->setTablePrefix('')
         )
         ->addService(
