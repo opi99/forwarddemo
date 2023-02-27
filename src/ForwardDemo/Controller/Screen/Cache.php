@@ -20,10 +20,8 @@ namespace ForwardDemo\Controller\Screen;
  */
 class Cache extends \ForwardFW\Controller\Screen
 {
-    /**
-     * @var string Holds cached data
-     */
-    private $strCached;
+    /** @var string text input */
+    protected string $text;
 
     /**
      * Loads Data for views and defines which views to use.
@@ -55,7 +53,7 @@ class Cache extends \ForwardFW\Controller\Screen
             ->setCallback($cacheCallback)
             ->setTimeout(5);
 
-        $this->strCached = $cache->getCache($configCacheData);
+        $this->cached = $cache->getCache($configCacheData);
 
         return true;
     }
@@ -63,8 +61,7 @@ class Cache extends \ForwardFW\Controller\Screen
     public function processView(): string
     {
         $templater = $this->application->getTemplater();
-        $templater->setVar('strInput', $this->strInput);
-        $templater->setVar('strCached', $this->strCached);
+        $templater->setVar('strCached', $this->cached);
 
         return parent::processView();
     }

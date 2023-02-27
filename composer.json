@@ -5,6 +5,7 @@
         }
     },
     "require": {
+        "php": "^8.1",
         "forward/forwardfw": "dev-master",
         "kodus/chrome-logger": "^1.2",
         "smarty/smarty": "^4.3"
