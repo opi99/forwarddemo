@@ -8,6 +8,6 @@
         "php": "^8.4",
         "forward/forwardfw": "dev-master",
         "kodus/chrome-logger": "^1.3",
-        "smarty/smarty": "^4.3"
+        "smarty/smarty": "^5.4"
     }
 }
