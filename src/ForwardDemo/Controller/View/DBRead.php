@@ -25,7 +25,7 @@ class DBRead extends \ForwardFW\Controller\View
      */
     public function processView(): string
     {
-        $dataHandler = $this->application->getServiceManager()->getService(\ForwardFW\Controller\DataHandlerInterface::class);
+        $dataHandler = $this->application->getServiceManager()->getService(\ForwardFW\Service\DataHandlerInterface::class);
 
         $data = $dataHandler->loadFromCached(
             'default',
